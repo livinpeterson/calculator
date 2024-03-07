@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <title>Calculator</title>
+<style>
+	/* background image */
+  body{
+    background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20200530/pngtree-cute-hand-drawn-style-mathematics-education-pink-plaid-background-image_337364.jpg);
+    background-repeat: no-repeat;
+    background-size: 218vh;
+  }
+  /* final result */
+  .final{
+    background: white;
+    margin-right: 705px;
+    margin-left: 295px;
+    margin-top: 5px;
+    padding-left: 28px;
+    height: 25px;
+  }
+
+  .first{
+    margin-left: 25%;
+    margin-top: 23%;
+  }
+
+</style>
+</head>
+
+<body>
+	<div class="first">
+  <h1 class="color" class="font-weight-bolder">Calculator</i>
+</h1>
+  <form>
+  <label class="font-weight-bold">Enter the number</label>
+  <input type="" name="" id="number1">
+
+<select id="drop">
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="/">/</option>
+  <option value="*">*</option>
+</select>
+<input type="" name="" id="number2">
+<button type="button" onclick="res()"><i class="fa fa-calculator"></i></button>
+  <div id="but1" class="final"></div>
+</div>
+</form>
+<script>
+
+	//addition
+  function add(x,y) {     
+    var result=x+y;
+    return result;
+ }
+    //substraction
+  function sub(x,y) {
+    var result=x-y;
+    return result;
+ }
+
+    //multiplication
+  function multi(x,y) {
+    var result=x*y;
+    return result;
+ }
+
+    //division
+  function div(x,y) {  
+    var result=x/y;
+    return result;
+ }
+    //result
+  function res() {
+  	var x = parseInt(document.getElementById('number1').value);
+    var y = parseInt(document.getElementById('number2').value);
+    var z=document.getElementById('drop').value;
+    var result;
+
+    if (z=='+') {
+      var res=add(x,y) 
+    }
+
+    if (z=='-') {
+       var res=sub(x,y)
+    }
+
+     if (z=='/') {
+      var res=div(x,y)
+    }
+
+     if (z=='*') {
+      var res=multi(x,y)
+    }
+    
+    document.getElementById('but1').innerHTML=res; 
+    console.log(res);
+  }
+
+</script>
+</body>
+</html
